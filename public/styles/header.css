@@ -1,0 +1,8 @@
+header {
+  display: flex;
+  background-color: rgba(100, 211, 255, 0.966);
+  background-image: url(../images/diagmonds-light.png);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

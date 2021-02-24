@@ -1,0 +1,38 @@
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.new-tweet textarea {
+  display: flex;
+  border-bottom: 5px solid #3a3832 ;
+  font-weight: 700;
+  background-color: inherit;
+  width: 800px;
+  color: #3a3832;
+}
+
+.new-tweet div {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  margin-top: 2.5%;
+}
+
+.new-tweet button {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+  background-color: #4056A1;
+  color: #f4f1ec;
+}
+
+.counter {
+  display: flex;
+  font-family: Bungee, sans-serif;
+  justify-content: flex-end;
+  color: #3a3832;
+}

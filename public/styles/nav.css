@@ -1,0 +1,21 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  height: 120px;
+  padding: 1.5em;
+  background-color: #4056A1;
+  color: #FFFFFF;
+}
+
+.title {
+  display: flex;
+  font-family: 'Bungee', cursive;
+  font-size: 1.5em;
+}
+
+.sideTitle {
+  display: flex;
+  align-items: center;
+  font-family: Bungee, sans-serif;
+  font-size: .75em;
+}
