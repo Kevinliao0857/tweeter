@@ -3,15 +3,77 @@
   flex-direction: column;
 }
 
+/* tweets main box */
 .tweets {
   display: flex;
   flex-direction: column;
   border-style: solid;
-  height: 200px;
+  height: auto;
   margin-top: 2%;
+  margin-bottom: 5%;
   font-family: 'Bungee', cursive; 
 }
 
-.tweets:hover {
+/* tweet box shadow */
+.tweets:hover{
   box-shadow: 7px 7px #757575;
+}
+
+/* words */
+.tweets textarea {
+  display: flex; 
+  border-style: none; 
+  resize: none;
+  border-bottom: 5px solid #3a3832 ;
+  font-weight: 700;
+  background-color: inherit;
+  width: 90%;
+  color: #3a3832;
+  flex-wrap: wrap;
+  margin-top: 1.5%;
+  margin-left: 5%;
+  margin-bottom: 2.5%;
+}
+
+
+/* tweets header with image, display name and username */
+.tweetHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 5%;
+  padding-right: 5%;
+  padding-left: 5%;  
+}
+
+.name {
+  display: flex;
+  font-size: larger;
+}
+
+.username {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+  color: transparent;
+}
+
+
+.username:hover {
+  color: #757575;
+}
+
+.profileImage {
+  display: flex;
+  max-width: 20%;
+  max-height: 40%;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 8%;
+  margin-bottom: 5%;
+  font-size: small;
 }
