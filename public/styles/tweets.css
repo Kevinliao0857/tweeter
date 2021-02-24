@@ -7,7 +7,7 @@
 .tweets {
   display: flex;
   flex-direction: column;
-  border-style: solid;
+  /* border-style: solid; */
   height: auto;
   margin-top: 2%;
   margin-bottom: 5%;
@@ -15,14 +15,13 @@
 }
 
 /* tweet box shadow */
-.tweets:hover{
+.tweetPost:hover{
   box-shadow: 7px 7px #757575;
 }
 
 /* words */
-.tweets textarea {
+.tweets article {
   display: flex; 
-  border-style: none; 
   resize: none;
   border-bottom: 5px solid #3a3832 ;
   font-weight: 700;
@@ -35,13 +34,17 @@
   margin-bottom: 2.5%;
 }
 
+.tweetPost {
+  display: flex;
+  border-style: solid;
+}
 
 /* tweets header with image, display name and username */
 .tweetHeader {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-top: 5%;
+  background: none;
   padding-right: 5%;
   padding-left: 5%;  
 }
@@ -60,7 +63,7 @@
 }
 
 
-.username:hover {
+.tweetPost:hover .username {
   color: #757575;
 }
 
