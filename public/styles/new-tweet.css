@@ -1,17 +1,24 @@
+.new-tweet > form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .new-tweet {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 .new-tweet textarea {
-  display: flex;
+  display: flex; 
+  border-style: none; 
+  resize: none;
   border-bottom: 5px solid #3a3832 ;
   font-weight: 700;
   background-color: inherit;
-  width: 800px;
+  width: 100%;
   color: #3a3832;
 }
 
