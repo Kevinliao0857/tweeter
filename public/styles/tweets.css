@@ -7,7 +7,6 @@
 .tweets {
   display: flex;
   flex-direction: column;
-  /* border-style: solid; */
   height: auto;
   margin-top: 2%;
   margin-bottom: 5%;
@@ -51,7 +50,7 @@
 
 .name {
   display: flex;
-  font-size: larger;
+  font-size: small;
 }
 
 .username {
@@ -69,8 +68,8 @@
 
 .profileImage {
   display: flex;
-  max-width: 20%;
-  max-height: 40%;
+  /* max-width: 20%;
+  max-height: 40%; */
 }
 
 .footer {
