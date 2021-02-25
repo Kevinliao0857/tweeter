@@ -3,45 +3,46 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
+// DOM ready
 $(document).ready(function() {
 
 
-loadtweets();
-const errorMessage = $(".tweet-error")
-errorMessage.hide()
+  loadtweets();
 
-// Ajax POSTING
-$(".new-tweet form").on("submit", function(event) {
-  event.preventDefault();
+  // To hide initial floating Error msg space
+  const errorMessage = $(".tweet-error");
+  errorMessage.hide();
 
-//Test
-  const textArea = $(this).children("textarea");
-  const inputText = textArea.val();
-  
+  // Ajax POSTING
+  $(".new-tweet form").on("submit", function(event) {
+    event.preventDefault();
 
+    const textArea = $(this).children("textarea");
+    const inputText = textArea.val();
 
-  if (!inputText) {
-    const emptyError = $(".tweet-error").text( `⚠️ Empty Tweet ⚠️`);
-    emptyError.hide()
-    emptyError.css('border', 'solid').fadeIn(1500).fadeOut(1000).fadeIn(1000).fadeOut(1000);
-  } else if (inputText.length > 140) {
-    const limitError = $(".tweet-error").text(`⚠️ Character Over Limit ⚠️`);
-    limitError.hide()
-    limitError.css('border', 'solid').fadeIn(1500).fadeOut(1000).fadeIn(1000).fadeOut(1000);
-  } else {
-    $.ajax({
-    url: "/tweets",
-    data: $(this).serialize(),
-    method: "POST",
-    success:
-      function () {
-        loadtweets()
-        textArea.val(""); 
+    if (!inputText) {
+      const emptyError = $(".tweet-error").text(`⚠️ Empty Tweet ⚠️`);
+      emptyError.hide();
+      emptyError.css('border', 'solid').fadeIn(1500).fadeOut(1000).fadeIn(1000).fadeOut(1000);
+    } else if (inputText.length > 140) {
+      const limitError = $(".tweet-error").text(`⚠️ Character Over Limit ⚠️`);
+      limitError.hide();
+      limitError.css('border', 'solid').fadeIn(1500).fadeOut(1000).fadeIn(1000).fadeOut(1000);
+    } else {
+      $.ajax({
+        url: "/tweets",
+        data: $(this).serialize(),
+        method: "POST",
+        success:
+      function() {
+        loadtweets();
+        textArea.val("");
         $('.counter').text(140);
       }
+      });
+    }
   });
-  }
-});
 });
 
 
@@ -50,25 +51,25 @@ const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
 
 
 /*render Tweets function*/
 const renderTweets = (tweets) => {
-  $("#tweets-container").empty()
+  $("#tweets-container").empty();
   for (let tweet of tweets) {
-    $("#tweets-container").append(createTweetElement(tweet))
-    }
+    $("#tweets-container").append(createTweetElement(tweet));
   }
+};
   
   
-  //Creating Tweet Element
-  const createTweetElement = (tweet) => {
-  const $tweet = $("<article class='tweetPost'>")
+//Creating Tweet Element
+const createTweetElement = (tweet) => {
+  const $tweet = $("<article class='tweetPost'>");
   const postDate = (Date.now() - tweet.created_at) / 86400000;
   
-    const htmlTweetCode = `
+  const htmlTweetCode = `
   
       <header class="tweetHeader">
         <img class="profileImage" src=${escape(tweet.user.avatars)}></img>
@@ -87,19 +88,19 @@ const renderTweets = (tweets) => {
       </footer>
   `;
   
-  return $tweet.html(htmlTweetCode)
-  };
+  return $tweet.html(htmlTweetCode);
+};
   
   
   
-  //loadtweets function
-  const loadtweets = () => {
-    $.ajax("/tweets", {
-      method: "GET",
-      dataType: "JSON",
-      success: function(tweets) {
-        renderTweets(tweets)
-      } 
+//loadtweets function
+const loadtweets = () => {
+  $.ajax("/tweets", {
+    method: "GET",
+    dataType: "JSON",
+    success: function(tweets) {
+      renderTweets(tweets);
+    }
   
-    })
-  };
+  });
+};

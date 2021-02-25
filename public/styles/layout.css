@@ -36,3 +36,23 @@ main.container {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ @media only screen and (min-width: 1024px) {
+  main {
+    width: 50%;
+    margin-left: 40%;
+    margin-top: 10%;
+  }
+
+  header {
+    width: 30%;
+    float: left;
+    margin: 10%;
+  }
+
+
+  .tweetHeader {
+    margin: 0;
+  }
+
+}

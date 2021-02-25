@@ -7,9 +7,10 @@ nav {
   height: 120px;
   padding: 1.5em;
   padding-bottom: 0;
-  /* background-color: transparent; */
-  background-color: #4056A1;
-  color: #FFFFFF;
+  background-color: transparent;
+  /* background-color: #4056A1; */
+  color: #000000;
+  z-index: 1;
 }
 
 .title {
@@ -25,4 +26,11 @@ nav {
   font-family: Bungee, sans-serif;
   padding-top: 2%;
   font-size: .75em;
+}
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
+    color: #FFFFFF;
+  }
 }
