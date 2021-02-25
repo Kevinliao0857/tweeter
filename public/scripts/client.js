@@ -7,12 +7,9 @@
 
 
 // list of major problems
-// lower right icons in tweets problem,
-// broke something new, text goes out of box???
 
 // list of minor problems
-// tweet top margin?
-// header border is slightly short
+// exclamation errors
 
 
 
@@ -29,6 +26,8 @@ $(".new-tweet form").on("submit", function(event) {
 //Test
   const textArea = $(this).children("textarea");
   const inputText = textArea.val();
+
+//emote <i class="fas fa-exclamation-triangle"></i> 
 
 
   if (!inputText) {
@@ -93,7 +92,7 @@ const renderTweets = (tweets) => {
           <p>${escape(tweet.content.text)}</p>
         </article>
       <footer class="footer">${Math.round(postDate)} days posted
-        <div>  
+        <div class="footerIcons">  
         <i class="fa fa-flag"></i>
         <i class="fa fa-retweet"></i>
         <i class="fa fa-heart"></i>

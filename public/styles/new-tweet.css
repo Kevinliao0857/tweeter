@@ -46,6 +46,9 @@
 
 .tweet-error {
   display: flex;
+  align-content: center;
   color: red;
+  width: 50vw;
+
 
 }

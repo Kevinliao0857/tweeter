@@ -22,5 +22,6 @@ nav {
   display: flex;
   align-items: center;
   font-family: Bungee, sans-serif;
+  padding-bottom: 5%;
   font-size: .75em;
 }
