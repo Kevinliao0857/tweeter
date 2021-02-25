@@ -4,6 +4,8 @@ $(document).ready(function() {
 
 });
 
+
+//Key Counter Color
 const onKeyUp = function () {
   const charLength = $("textarea").val().length;
   const remainingText = 140 - charLength;

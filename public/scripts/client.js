@@ -7,10 +7,11 @@
 
 
 // list of major problems
-// Error messages problems, css Header/Username placement problems, lower right icons in tweets problem,
+// lower right icons in tweets problem,
 // broke something new, text goes out of box???
 
 // list of minor problems
+// tweet top margin?
 // header border is slightly short
 
 
@@ -25,70 +26,18 @@ loadtweets();
 $(".new-tweet form").on("submit", function(event) {
   event.preventDefault();
 
-// //Version 1 Correct Errors, can't fade
-//   const textArea = $(this).children("textarea");
-//   const inputText = textArea.val();
-//   const errorMessage = $(this).children("h4");
-//   errorMessage.hide()
-  
-//   if (!inputText) {
-//     $(".tweet-error").text("Error empty tweet");
-//   } else if (inputText.length > 140) {
-//     $(".tweet-error").text("Over character limit")
-//   } else {
-//     $.ajax({
-//     url: "/tweets",
-//     data: $(this).serialize(),
-//     method: "POST",
-//     success:
-//       function () {
-//         loadtweets()
-//         textArea.val(""); 
-//         $('.counter').text("140");
-//       }
-//   });
-//   }
-
-
-// //Version 2 fades, but wrong Error
-//   const textArea = $(this).children("textarea");
-//   const inputText = textArea.val();
-//   const errorMessage1 = $(".tweet-error").text("Empty");
-//   const errorMessage2 = $(".tweet-error").text("Over");
-//   errorMessage1.hide()
-//   errorMessage2.hide()
-
-//   if (!inputText) {
-//     errorMessage1.css('border', 'solid').fadeIn(1000);
-//   } else if (inputText.length > 140) {
-//     errorMessage2.css('border', 'solid').fadeIn(1000);
-//   } else {
-//     $.ajax({
-//     url: "/tweets",
-//     data: $(this).serialize(),
-//     method: "POST",
-//     success:
-//       function () {
-//         loadtweets()
-//         textArea.val(""); 
-//         $('.counter').text(140);
-//       }
-//   });
-//   }
-
-
 //Test
   const textArea = $(this).children("textarea");
   const inputText = textArea.val();
-  const emptyError = $(".tweet-error").text("Empty Tweet");
-  const limitError = $(".tweet-error").text("Over The Limit");
 
-  emptyError.hide()
-  limitError.hide()
 
   if (!inputText) {
+    const emptyError = $(".tweet-error").text("Empty Tweet");
+    emptyError.hide()
     emptyError.css('border', 'solid').fadeIn(1000).fadeOut(1000);
   } else if (inputText.length > 140) {
+    const limitError = $(".tweet-error").text("Over The Limit");
+    limitError.hide()
     limitError.css('border', 'solid').fadeIn(1000).fadeOut(1000);
   } else {
     $.ajax({
