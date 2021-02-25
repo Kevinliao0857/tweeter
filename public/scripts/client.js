@@ -3,6 +3,17 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
+
+
+// list of major problems
+// Error messages problems, css Header/Username placement problems, lower right icons in tweets problem,
+
+// list of minor problems
+// header border is slightly short
+
+
+
 $(document).ready(function() {
 
 
@@ -13,12 +24,13 @@ loadtweets();
 $(".new-tweet form").on("submit", function(event) {
   event.preventDefault();
 
-  const textArea = $(this).children("textarea");
-  const inputText = textArea.val();
-  // const errorMessage = $(this).children("h4");
-  
-  
+//Version 1 Correct Errors, can't fade
 
+  const textArea = $(this).children("textarea");
+  const inputText = textArea.val().length;
+  const errorMessage = $(this).children("h4");
+  errorMessage.hide()
+  
   if (!inputText) {
     $(".tweet-error").text("Error empty tweet");
   } else if (inputText.length > 140) {
@@ -31,11 +43,38 @@ $(".new-tweet form").on("submit", function(event) {
     success:
       function () {
         loadtweets()
-        textArea.val(''); 
-        $('.counter').text('140');
+        textArea.val(""); 
+        $('.counter').text(140);
       }
   });
   }
+
+
+// //Version 2 fades, but wrong Error
+//   const textArea = $(this).children("textarea");
+//   const inputText = textArea.val().length;
+//   const errorMessage1 = $(".tweet-error").text("Empty");
+//   const errorMessage2 = $(".tweet-error").text("Over");
+//   errorMessage1.hide()
+//   errorMessage2.hide()
+
+//   if (!inputText) {
+//     errorMessage1.css('border', 'solid').fadeIn(1000);
+//   } else if (inputText.length > 140) {
+//     errorMessage2.css('border', 'solid').fadeIn(1000);
+//   } else {
+//     $.ajax({
+//     url: "/tweets",
+//     data: $(this).serialize(),
+//     method: "POST",
+//     success:
+//       function () {
+//         loadtweets()
+//         textArea.val(""); 
+//         $('.counter').text(140);
+//       }
+//   });
+//   }
 
  
 
@@ -51,8 +90,10 @@ const escape =  function(str) {
 }
 
 
+
 /*render Tweets function*/
 const renderTweets = (tweets) => {
+  $("#tweets-container").empty()
   for (let tweet of tweets) {
     $("#tweets-container").append(createTweetElement(tweet))
     }
@@ -62,7 +103,7 @@ const renderTweets = (tweets) => {
   //Creating Tweet Element
   const createTweetElement = (tweet) => {
   const $tweet = $("<article class='tweetPost'>")
-  
+  const postDate = (Date.now() - tweet.created_at) / 86400000;
   
     const htmlTweetCode = `
   
@@ -74,7 +115,12 @@ const renderTweets = (tweets) => {
         <article>
           <p>${escape(tweet.content.text)}</p>
         </article>
-      <footer class="footer">${escape(tweet.created_at)}
+      <footer class="footer">${Math.round(postDate)} days posted
+        <div>  
+        <i class="fa fa-flag"></i>
+        <i class="fa fa-retweet"></i>
+        <i class="fa fa-heart"></i>
+        </div>
       </footer>
   `;
   

@@ -6,7 +6,7 @@
 /* tweets main box */
 .tweets {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   height: auto;
   margin-top: 2%;
   margin-bottom: 5%;
@@ -44,8 +44,9 @@
   flex-direction: row;
   align-items: center;
   background: none;
-  padding-right: 5%;
+  width: auto;
   padding-left: 5%;  
+  object-fit: inherit;
 }
 
 .name {
@@ -72,10 +73,16 @@
   max-height: 40%; */
 }
 
+
+/* footer */
 .footer {
   display: flex;
   justify-content: flex-start;
   padding-left: 8%;
   margin-bottom: 5%;
   font-size: small;
+}
+
+.fa.fa-flag {
+  size: 5%;
 }

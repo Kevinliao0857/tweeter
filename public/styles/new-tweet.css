@@ -43,3 +43,9 @@
   justify-content: flex-end;
   color: #3a3832;
 }
+
+.tweet-error {
+  display: flex;
+  color: red;
+
+}
