@@ -7,6 +7,7 @@
 .tweets {
   display: flex;
   flex-direction: column-reverse;
+  flex-wrap: wrap;
   height: auto;
   margin-top: 2%;
   margin-bottom: 5%;
@@ -17,6 +18,7 @@
 .tweetPost:hover{
   box-shadow: 7px 7px #757575;
 }
+
 
 /* words */
 .tweets article {
@@ -35,6 +37,7 @@
 
 .tweetPost {
   display: flex;
+  flex-wrap: wrap;
   border-style: solid;
 }
 
@@ -44,9 +47,11 @@
   flex-direction: row;
   align-items: center;
   background: none;
-  width: auto;
+  width: 90vw;
+  /* height: 1vh; */
   padding-left: 5%;  
-  object-fit: inherit;
+  padding-right: 5%;
+  /* object-fit: inherit; */
 }
 
 .name {
@@ -83,6 +88,6 @@
   font-size: small;
 }
 
-.fa.fa-flag {
+/* .fa.fa-flag {
   size: 5%;
-}
+} */
