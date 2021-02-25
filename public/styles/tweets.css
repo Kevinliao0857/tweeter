@@ -35,8 +35,16 @@
   margin-bottom: 2.5%;
 }
 
+.tweets article p {
+  word-wrap: break-word;
+  text-align: left;
+  max-width: 100%;
+  margin: auto;
+  margin-left: 0px;
+}
+
 .tweetPost {
-  display: flex;
+  /* display: flex; */
   flex-wrap: wrap;
   border-style: solid;
 }
@@ -45,12 +53,13 @@
 .tweetHeader {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  /* align-items: center; */
   background: none;
   width: 90vw;
   /* height: 1vh; */
   padding-left: 5%;  
   padding-right: 5%;
+  padding-top: 5%
   /* object-fit: inherit; */
 }
 

@@ -5,7 +5,8 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 14%;
+  /* margin-top: 14%; */
+  padding-top: 150px;
 
 }
 
