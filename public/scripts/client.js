@@ -3,21 +3,12 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
-
-
-// list of major problems
-
-// list of minor problems
-// exclamation errors
-
-
-
 $(document).ready(function() {
 
 
 loadtweets();
-
+const errorMessage = $(".tweet-error")
+errorMessage.hide()
 
 // Ajax POSTING
 $(".new-tweet form").on("submit", function(event) {
@@ -26,7 +17,7 @@ $(".new-tweet form").on("submit", function(event) {
 //Test
   const textArea = $(this).children("textarea");
   const inputText = textArea.val();
-
+  
 
 
   if (!inputText) {
@@ -50,9 +41,6 @@ $(".new-tweet form").on("submit", function(event) {
       }
   });
   }
-
- 
-
 });
 });
 
