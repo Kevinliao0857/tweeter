@@ -27,17 +27,16 @@ $(".new-tweet form").on("submit", function(event) {
   const textArea = $(this).children("textarea");
   const inputText = textArea.val();
 
-//emote <i class="fas fa-exclamation-triangle"></i> 
 
 
   if (!inputText) {
-    const emptyError = $(".tweet-error").text("Empty Tweet");
+    const emptyError = $(".tweet-error").text( `⚠️ Empty Tweet ⚠️`);
     emptyError.hide()
-    emptyError.css('border', 'solid').fadeIn(1000).fadeOut(1000);
+    emptyError.css('border', 'solid').fadeIn(1500).fadeOut(1000).fadeIn(1000).fadeOut(1000);
   } else if (inputText.length > 140) {
-    const limitError = $(".tweet-error").text("Over The Limit");
+    const limitError = $(".tweet-error").text(`⚠️ Character Over Limit ⚠️`);
     limitError.hide()
-    limitError.css('border', 'solid').fadeIn(1000).fadeOut(1000);
+    limitError.css('border', 'solid').fadeIn(1500).fadeOut(1000).fadeIn(1000).fadeOut(1000);
   } else {
     $.ajax({
     url: "/tweets",

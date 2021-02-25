@@ -46,9 +46,11 @@
 
 .tweet-error {
   display: flex;
-  align-content: center;
   color: red;
-  width: 50vw;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 10%;
+  padding-right: 10%;
 
 
 }

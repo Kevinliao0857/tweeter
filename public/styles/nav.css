@@ -20,8 +20,9 @@ nav {
 
 .sideTitle {
   display: flex;
+  flex-direction: column;
   align-items: center;
   font-family: Bungee, sans-serif;
-  padding-bottom: 5%;
+  padding-top: 2%;
   font-size: .75em;
 }
