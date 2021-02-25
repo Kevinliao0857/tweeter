@@ -13,27 +13,42 @@ loadtweets();
 $(".new-tweet form").on("submit", function(event) {
   event.preventDefault();
 
+  const textArea = $(this).children("textarea");
+  const inputText = textArea.val();
+  // const errorMessage = $(this).children("h4");
+  
+  
 
-  $.ajax({
+  if (!inputText) {
+    $(".tweet-error").text("Error empty tweet");
+  } else if (inputText.length > 140) {
+    $(".tweet-error").text("Over character limit")
+  } else {
+    $.ajax({
     url: "/tweets",
     data: $(this).serialize(),
     method: "POST",
     success:
-    function() {
-      loadtweets();
-      $textarea.val("");
-      $(".counter").text("140")
-    }
+      function () {
+        loadtweets()
+        textArea.val(''); 
+        $('.counter').text('140');
+      }
   });
+  }
 
+ 
 
+});
 });
 
 
-
-
-});
-
+//escape
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
 
 /*render Tweets function*/
@@ -52,14 +67,14 @@ const renderTweets = (tweets) => {
     const htmlTweetCode = `
   
       <header class="tweetHeader">
-        <img class="profileImage" src=${tweet.user.avatars}></img>
-        <div class="name">${tweet.user.name}</div>
-        <div class="username">${tweet.user.handle}</div>
+        <img class="profileImage" src=${escape(tweet.user.avatars)}></img>
+        <div class="name">${escape(tweet.user.name)}</div>
+        <div class="username">${escape(tweet.user.handle)}</div>
       </header>    
         <article>
-          <p>${tweet.content.text}</p>
+          <p>${escape(tweet.content.text)}</p>
         </article>
-      <footer class="footer">${tweet.created_at}
+      <footer class="footer">${escape(tweet.created_at)}
       </footer>
   `;
   
