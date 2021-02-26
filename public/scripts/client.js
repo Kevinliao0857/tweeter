@@ -22,13 +22,13 @@ $(document).ready(function() {
     const inputText = textArea.val();
 
     if (!inputText) {
-      const emptyError = $(".tweet-error").text(`⚠️ Empty Tweet ⚠️`);
+      const emptyError = $(".tweet-error").text(`⚠️ Comment Box Empty ⚠️`);
       emptyError.hide();
-      emptyError.css('border', 'solid').fadeIn(1500).fadeOut(1000).fadeIn(1000).fadeOut(1000);
+      emptyError.css('border', 'solid').slideDown(1500).fadeOut(1000);
     } else if (inputText.length > 140) {
       const limitError = $(".tweet-error").text(`⚠️ Character Over Limit ⚠️`);
       limitError.hide();
-      limitError.css('border', 'solid').fadeIn(1500).fadeOut(1000).fadeIn(1000).fadeOut(1000);
+      limitError.css('border', 'solid').slideDown(1500).fadeOut(1000);
     } else {
       $.ajax({
         url: "/tweets",

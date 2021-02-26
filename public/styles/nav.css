@@ -10,6 +10,7 @@ nav {
   background-color: transparent;
   /* background-color: #4056A1; */
   color: #000000;
+  text-shadow: 5px 5px gray;
   z-index: 1;
 }
 
@@ -25,12 +26,18 @@ nav {
   align-items: center;
   font-family: Bungee, sans-serif;
   padding-top: 2%;
+  padding-bottom: 2%;
   font-size: .75em;
+}
+
+.fa.fa-angle-double-down {
+  color: red;
 }
 
 @media only screen and (min-width: 1024px) {
   nav {
     background-color: #4056A1;
     color: #FFFFFF;
+    text-shadow: none;
   }
 }
