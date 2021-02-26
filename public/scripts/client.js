@@ -101,6 +101,5 @@ const loadtweets = () => {
     success: function(tweets) {
       renderTweets(tweets);
     }
-  
   });
 };
