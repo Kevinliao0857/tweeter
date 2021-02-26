@@ -74,13 +74,17 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
+  word-wrap: break-word;
   width: 100%;
+
   color: transparent;
 }
 
 /* hover for shadow for username */
 .tweetPost:hover .username {
-  color: #757575;
+  animation: color-change 5s infinite ease-in;
+  /* color: #808080; */
+  text-shadow: 2px 2px black;
 }
 
 /* Profile Image */
@@ -100,3 +104,9 @@
   font-size: small;
 }
 
+@keyframes color-change {
+  0% { color: rgb(142, 219, 255); }
+  50% { color: rgb(255, 170, 241); }
+  100% { color: rgb(134, 250, 192); }
+
+}
