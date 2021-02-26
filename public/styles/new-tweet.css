@@ -1,9 +1,11 @@
+/* text area sizing */
 .new-tweet > form {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
+/* text area + title positioning */
 .new-tweet {
   display: flex;
   flex-direction: column;
@@ -11,6 +13,7 @@
   align-items: center;
 }
 
+/* text area internals */
 .new-tweet textarea {
   display: flex; 
   border-style: none; 
@@ -22,6 +25,7 @@
   color: #3a3832;
 }
 
+/* submit button and counter positioning */
 .new-tweet div {
   display: flex;
   align-content: center;
@@ -29,6 +33,7 @@
   margin-top: 2.5%;
 }
 
+/* submit button */
 .new-tweet button {
   display: flex;
   justify-content: space-between;
@@ -44,6 +49,7 @@
   color: #3a3832;
 }
 
+/* empty and over limit error */
 .tweet-error {
   display: flex;
   color: red;
@@ -51,6 +57,4 @@
   padding-bottom: 2%;
   padding-left: 10%;
   padding-right: 10%;
-
-
 }

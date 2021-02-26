@@ -37,6 +37,9 @@ main.container {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+
+ 
+/* Site objects positioning */
  @media only screen and (min-width: 1024px) {
   main {
     width: 50%;
@@ -49,7 +52,6 @@ main.container {
     float: left;
     margin: 10%;
   }
-
 
   .tweetHeader {
     margin: 0;

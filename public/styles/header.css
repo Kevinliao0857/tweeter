@@ -5,15 +5,17 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* margin-top: 14%; */
   padding-top: 20%;
 
 }
 
+
+/* color and sizing of header */
 @media only screen and (min-width: 1024px) {
 
   header {
     background-color: khaki;
+    border-radius: 25px;
     padding-top: 10;
     padding-top: 5%;
   }

@@ -1,3 +1,4 @@
+/* tweet area + tweets main body container */
 .container {
   display: flex;
   flex-direction: column;
@@ -46,8 +47,8 @@
 
 /* tweetbox border */
 .tweetPost {
-  /* display: flex; */
   flex-wrap: wrap;
+  border-radius: 25px;
   border-style: solid;
 }
 
@@ -76,15 +77,13 @@
   color: transparent;
 }
 
-
+/* hover for shadow for username */
 .tweetPost:hover .username {
   color: #757575;
 }
 
 .profileImage {
   display: flex;
-  /* max-width: 20%;
-  max-height: 40%; */
 }
 
 
