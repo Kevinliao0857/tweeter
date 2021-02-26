@@ -15,12 +15,14 @@ nav {
   z-index: 1;
 }
 
+/* Main Title name "TWEETER" */
 .title {
   display: flex;
   font-family: 'Bungee', cursive;
   font-size: 1.5em;
 }
 
+/* Side title "write a new tweet" */
 .sideTitle {
   display: flex;
   flex-direction: column;
@@ -33,9 +35,9 @@ nav {
 /* Arrow symbol under sideTitle */
 .fa.fa-angle-double-down {
   color: red;
-  
 }
 
+/* Arrow movement on hover */
 .sideTitle:hover .fa.fa-angle-double-down {
   transform: translateY(50%);
   animation: transform 1s ease-in;
@@ -49,5 +51,4 @@ nav {
     color: #FFFFFF;
     text-shadow: none;
   }
-
 }

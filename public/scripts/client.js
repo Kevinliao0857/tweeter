@@ -64,6 +64,7 @@ const renderTweets = (tweets) => {
 };
   
   
+
 //Creating Tweet Element
 const createTweetElement = (tweet) => {
   const $tweet = $("<article class='tweetPost'>");
@@ -87,7 +88,6 @@ const createTweetElement = (tweet) => {
         </div>
       </footer>
   `;
-  
   return $tweet.html(htmlTweetCode);
 };
   
